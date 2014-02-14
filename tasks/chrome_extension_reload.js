@@ -10,7 +10,7 @@
 
 module.exports = function(grunt) {
 
-  var chromeExtensionTabId;
+  var chromeExtensionTabId = 0;
 
 
   grunt.initConfig({
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     exec: {
       reloadChromeTab: {
         cmd: function() {
-          return "chrome-cli reload -t " + chromeExtensionTabId; 
+          return chromeExtensionTabId ? "chrome-cli reload -t " + chromeExtensionTabId : "chrome-cli open chrome://extensions && chrome-cli reload"; 
         }
       }
     },
@@ -45,11 +45,9 @@ module.exports = function(grunt) {
 
               chromeExtensionTabId = chromeExtensionTabIdContainer.substr(1, chromeExtensionTabIdContainer.length - 2);
               console.log("Chrome Extension Tab #: " + chromeExtensionTabId);
-              return true;
             }
-            else {
-              return false;
-            }
+
+            return true;
           }
         },
         cmd: "chrome-cli",
@@ -59,7 +57,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('reloadExtensionTab', function() {
+  grunt.registerTask('chrome_extension_reload', function() {
     grunt.task.run(['external_daemon:getExtensionTabId', 'exec:reloadChromeTab']);
   });
 
