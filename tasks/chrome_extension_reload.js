@@ -13,7 +13,7 @@ module.exports = function(grunt) {
   var chromeExtensionTabId = 0;
 
 
-  grunt.initConfig({
+  grunt.config.merge({
 
     /**
       Reloads tab in chrome with id of chromeExtensionTabId
