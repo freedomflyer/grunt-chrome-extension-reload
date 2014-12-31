@@ -5,7 +5,7 @@
 ## Getting Started
 This plugin requires Grunt `~0.4.2`
 
-This plugin also requires prassmussen's [chrome-cli](https://github.com/prasmussen/chrome-cli) binary to be installed.
+This plugin also requires prassmussen's [chrome-cli](https://github.com/prasmussen/chrome-cli) binary, and jlindsey's [grunt-external-daemon](https://github.com/jlindsey/grunt-external-daemon) to be installed.
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
